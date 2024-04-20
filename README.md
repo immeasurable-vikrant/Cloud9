@@ -1,4 +1,4 @@
-# Cloud9 - making the web faster
+# Cloud9 - Making the Web faster
 
 ## Architecture:
     There are 3 services we've made:
