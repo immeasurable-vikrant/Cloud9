@@ -31,6 +31,14 @@
     It needs to find what is the "id" that the user trying to visit and based on that get the assets from the S3 and give it back to user.
 
 
+#### Few Takeaways :
+    - Upload service and Deployment service are separate - the reason for this is the upload service is very simple - copying the code  from ghithub and puttin on the S3 store and do not require a lot of CPU. So, you doesnt necessarily need to auto scale the service. Deployment on the other hand is very CPU intensive, if you are running `npm run build`, if you're converting a react project over HTML/CSS/JS- that requires a lot of CPU & you dont want the `upload service` to be affected in case of one project that is taking a lot of CPU on a mchine.
+
+    - Building the project means - for a react project atleast, we need to convert that HTML/CSS/JS files then we serve these files as normal and we don't have to do anything extra. The process of converting the React project into the HTML/CSS/JS is called `Building the project` and this is the CPU intensive task we talked about above.
+
+    - We need to serve HTML/CSS/JS file and not directly React files is beacause Browser only understands Javascript/HTML/CSS.
+
+
 
 
     
